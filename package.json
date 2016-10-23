@@ -1,0 +1,22 @@
+{
+  "name": "radiostation",
+  "version": "1.0.0",
+  "description": "API and App to queue song data into station",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "webpack-server": "^0.1.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Justin R. Evans",
+  "license": "ISC"
+}
