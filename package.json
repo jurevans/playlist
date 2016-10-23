@@ -21,8 +21,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "webpack --progress --colors",
-    "watch": "webpack-dev-server --progress --colors --port 15001"
+    "build": "webpack"
   },
   "author": "Justin R. Evans",
   "license": "ISC"

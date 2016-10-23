@@ -12,8 +12,8 @@ class ListComponent extends React.Component {
 	render() {
         let arrList = [];
 
-        for(let i=0; i<10; i++) {
-            arrList.push(<li key={i}>Item {i + 1}</li>);
+        for(let i=0; i<4; i++) {
+            arrList.push(<li key={'list_item_' + i}>Item {i + 1}</li>);
         }
 
 		return (

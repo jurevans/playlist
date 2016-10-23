@@ -101,10 +101,10 @@
 	        value: function render() {
 	            var arrList = [];
 
-	            for (var i = 0; i < 10; i++) {
+	            for (var i = 0; i < 4; i++) {
 	                arrList.push(_react2.default.createElement(
 	                    'li',
-	                    { key: i },
+	                    { key: 'list_item_' + i },
 	                    'Item ',
 	                    i + 1
 	                ));
