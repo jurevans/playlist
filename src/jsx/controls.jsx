@@ -1,6 +1,7 @@
 import React from 'react';
- 
-class Controls extends React.Component {
+import ReactDOM from 'react-dom';
+
+class ControlsComponent extends React.Component {
 	render() {
 		return <div>
 				<button>Play/Pause</button>
@@ -9,4 +10,6 @@ class Controls extends React.Component {
 				<button>Previous</button>
 			</div>
 	}
-}
+};
+
+ReactDOM.render(<ControlsComponent/>, document.getElementById('controls'));
