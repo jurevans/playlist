@@ -103,7 +103,7 @@
 	    _createClass(ListComponent, [{
 	        key: 'render',
 	        value: function render() {
-	            var arrList = [];
+	            var list = [];
 	            var data = {
 	                playlist: [{
 	                    _id: 'item1',
@@ -118,7 +118,7 @@
 	            };
 
 	            _underscore2.default.each(data.playlist, function (item) {
-	                arrList.push(_react2.default.createElement(
+	                list.push(_react2.default.createElement(
 	                    'li',
 	                    { key: item._id },
 	                    item.name
@@ -128,7 +128,7 @@
 	            return _react2.default.createElement(
 	                'ul',
 	                null,
-	                arrList
+	                list
 	            );
 	        }
 	    }]);
@@ -23141,45 +23141,62 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ControlsComponent = function (_React$Component) {
-		_inherits(ControlsComponent, _React$Component);
+	    _inherits(ControlsComponent, _React$Component);
 
-		function ControlsComponent() {
-			_classCallCheck(this, ControlsComponent);
+	    function ControlsComponent(props) {
+	        _classCallCheck(this, ControlsComponent);
 
-			return _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).apply(this, arguments));
-		}
+	        var _this = _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).call(this, props));
 
-		_createClass(ControlsComponent, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ className: 'controls' },
-					_react2.default.createElement(
-						'button',
-						null,
-						'Play/Pause'
-					),
-					_react2.default.createElement(
-						'button',
-						null,
-						'Stop'
-					),
-					_react2.default.createElement(
-						'button',
-						null,
-						'Next'
-					),
-					_react2.default.createElement(
-						'button',
-						null,
-						'Previous'
-					)
-				);
-			}
-		}]);
+	        _this.state = {
+	            play: false,
+	            stop: false,
+	            next: false,
+	            prev: false
+	        };
 
-		return ControlsComponent;
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(ControlsComponent, [{
+	        key: 'handleClick',
+	        value: function handleClick(e) {
+	            e.preventDefault();
+
+	            console.log(e.target.name);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'controls' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'play', onClick: this.handleClick },
+	                    'Play/Pause'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'stop', onClick: this.handleClick },
+	                    'Stop'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'next', onClick: this.handleClick },
+	                    'Next'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'prev', onClick: this.handleClick },
+	                    'Previous'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ControlsComponent;
 	}(_react2.default.Component);
 
 	;
