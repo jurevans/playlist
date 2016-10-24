@@ -18,3 +18,10 @@ Requires:
 
 ```webpack-dev-server --progress --colors --hot --port 15001```
 
+# Testing (Mocha/Chai)
+
+```npm test```
+
+Or:
+
+```mocha --compilers js:babel-core/register```
