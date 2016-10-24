@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
+import Observer from '../../js/observer.js';
 
 class ControlsComponent extends React.Component {
     constructor(props) {
         super(props);
+        let observer = new Observer();
 
         this.handleClick = this.handleClick.bind(this);
     }

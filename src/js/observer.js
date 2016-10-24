@@ -1,6 +1,7 @@
 import _ from 'underscore';
 
-class Observer {
+/* Event Observer Pattern */
+export default class Observer {
     constructor () {
         this.handlers = [];
     }
