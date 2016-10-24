@@ -17,9 +17,8 @@ class ListComponent extends React.Component {
             arrList.push(<li key={'list_item_' + i}>Item {i + 1}</li>);
         }
 
-        /* Test array of React elements */
-        
         _.each(arrList, function(item){
+            // Just a test...
             console.log(item);
         });
 
