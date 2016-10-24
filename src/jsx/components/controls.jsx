@@ -6,13 +6,17 @@ import Observer from '../../js/observer.js';
 class ControlsComponent extends React.Component {
     constructor(props) {
         super(props);
-        let observer = new Observer();
+        this.observer = new Observer();
 
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
             e.preventDefault();
+
+            this.observer.subscribe(() => {
+                console.log('click');
+            });
 
             console.log(e.target.name);
     }

@@ -5,7 +5,7 @@
   "repository": "https://github.com/jurevans/radiostation.git",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "dependencies": {
     "react": "^15.3.2",

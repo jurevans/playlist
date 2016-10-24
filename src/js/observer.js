@@ -1,6 +1,5 @@
 import _ from 'underscore';
 
-/* Event Observer Pattern */
 export default class Observer {
     constructor () {
         this.handlers = [];
@@ -28,3 +27,19 @@ export default class Observer {
         });
     }
 }
+
+/* Event Observer Pattern */
+/*
+let clickHandler = (item) => {
+    console.log(item);
+};
+
+const observer = new Observer();
+
+observer.subscribe(clickHandler);
+observer.fire('event #1');
+observer.unsubscribe(clickHandler);
+observer.fire('event #2');
+observer.subscribe(clickHandler);
+observer.fire('event #3');
+*/

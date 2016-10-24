@@ -50,11 +50,11 @@
 
 	var _list2 = _interopRequireDefault(_list);
 
-	var _current = __webpack_require__(174);
+	var _current = __webpack_require__(175);
 
 	var _current2 = _interopRequireDefault(_current);
 
-	var _controls = __webpack_require__(175);
+	var _controls = __webpack_require__(176);
 
 	var _controls2 = _interopRequireDefault(_controls);
 
@@ -79,6 +79,10 @@
 	var _underscore = __webpack_require__(173);
 
 	var _underscore2 = _interopRequireDefault(_underscore);
+
+	var _observer = __webpack_require__(174);
+
+	var _observer2 = _interopRequireDefault(_observer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23065,6 +23069,80 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _underscore = __webpack_require__(173);
+
+	var _underscore2 = _interopRequireDefault(_underscore);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Observer = function () {
+	    function Observer() {
+	        _classCallCheck(this, Observer);
+
+	        this.handlers = [];
+	    }
+
+	    _createClass(Observer, [{
+	        key: 'subscribe',
+	        value: function subscribe(fn) {
+	            this.handlers.push(fn);
+	        }
+	    }, {
+	        key: 'unsubscribe',
+	        value: function unsubscribe(fn) {
+	            this.handlers = this.handlers.filter(function (item) {
+	                if (item !== fn) {
+	                    return item;
+	                }
+	            });
+	        }
+	    }, {
+	        key: 'fire',
+	        value: function fire(o, thisObj) {
+	            var scope = thisObj || window;
+
+	            _underscore2.default.each(this.handlers, function (item) {
+	                item.call(scope, o);
+	            });
+	        }
+	    }]);
+
+	    return Observer;
+	}();
+
+	/* Event Observer Pattern */
+	/*
+	let clickHandler = (item) => {
+	    console.log(item);
+	};
+
+	const observer = new Observer();
+
+	observer.subscribe(clickHandler);
+	observer.fire('event #1');
+	observer.unsubscribe(clickHandler);
+	observer.fire('event #2');
+	observer.subscribe(clickHandler);
+	observer.fire('event #3');
+	*/
+
+
+	exports.default = Observer;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -23078,6 +23156,10 @@
 	var _underscore = __webpack_require__(173);
 
 	var _underscore2 = _interopRequireDefault(_underscore);
+
+	var _observer = __webpack_require__(174);
+
+	var _observer2 = _interopRequireDefault(_observer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23113,12 +23195,10 @@
 	_reactDom2.default.render(_react2.default.createElement(CurrentComponent, null), document.getElementById('current'));
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -23134,7 +23214,7 @@
 
 	var _underscore2 = _interopRequireDefault(_underscore);
 
-	var _observer = __webpack_require__(176);
+	var _observer = __webpack_require__(174);
 
 	var _observer2 = _interopRequireDefault(_observer);
 
@@ -23147,122 +23227,65 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ControlsComponent = function (_React$Component) {
-	        _inherits(ControlsComponent, _React$Component);
+	    _inherits(ControlsComponent, _React$Component);
 
-	        function ControlsComponent(props) {
-	                _classCallCheck(this, ControlsComponent);
+	    function ControlsComponent(props) {
+	        _classCallCheck(this, ControlsComponent);
 
-	                var _this = _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).call(this, props));
 
-	                var observer = new _observer2.default();
-	                console.log(_typeof(observer.subscribe));
+	        _this.observer = new _observer2.default();
 
-	                _this.handleClick = _this.handleClick.bind(_this);
-	                return _this;
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(ControlsComponent, [{
+	        key: 'handleClick',
+	        value: function handleClick(e) {
+	            e.preventDefault();
+	            this.observer.subscribe(function () {
+	                console.log('click');
+	            });
+
+	            console.log(e.target.name);
 	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'controls' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'play', onClick: this.handleClick },
+	                    'Play/Pause'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'stop', onClick: this.handleClick },
+	                    'Stop'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'next', onClick: this.handleClick },
+	                    'Next'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { name: 'prev', onClick: this.handleClick },
+	                    'Previous'
+	                )
+	            );
+	        }
+	    }]);
 
-	        _createClass(ControlsComponent, [{
-	                key: 'handleClick',
-	                value: function handleClick(e) {
-	                        e.preventDefault();
-
-	                        console.log(e.target.name);
-	                }
-	        }, {
-	                key: 'render',
-	                value: function render() {
-	                        return _react2.default.createElement(
-	                                'div',
-	                                { className: 'controls' },
-	                                _react2.default.createElement(
-	                                        'button',
-	                                        { name: 'play', onClick: this.handleClick },
-	                                        'Play/Pause'
-	                                ),
-	                                _react2.default.createElement(
-	                                        'button',
-	                                        { name: 'stop', onClick: this.handleClick },
-	                                        'Stop'
-	                                ),
-	                                _react2.default.createElement(
-	                                        'button',
-	                                        { name: 'next', onClick: this.handleClick },
-	                                        'Next'
-	                                ),
-	                                _react2.default.createElement(
-	                                        'button',
-	                                        { name: 'prev', onClick: this.handleClick },
-	                                        'Previous'
-	                                )
-	                        );
-	                }
-	        }]);
-
-	        return ControlsComponent;
+	    return ControlsComponent;
 	}(_react2.default.Component);
 
 	;
 
 	_reactDom2.default.render(_react2.default.createElement(ControlsComponent, null), document.getElementById('controls'));
-
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _underscore = __webpack_require__(173);
-
-	var _underscore2 = _interopRequireDefault(_underscore);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/* Event Observer Pattern */
-	var Observer = function () {
-	    // class Observer {
-	    function Observer() {
-	        _classCallCheck(this, Observer);
-
-	        this.handlers = [];
-	    }
-
-	    _createClass(Observer, [{
-	        key: 'subscribe',
-	        value: function subscribe(fn) {
-	            this.handlers.push(fn);
-	        }
-	    }, {
-	        key: 'unsubscribe',
-	        value: function unsubscribe(fn) {
-	            this.handlers = this.handlers.filter(function (item) {
-	                if (item !== fn) {
-	                    return item;
-	                }
-	            });
-	        }
-	    }, {
-	        key: 'fire',
-	        value: function fire(o, thisObj) {
-	            var scope = thisObj || window;
-
-	            _underscore2.default.each(this.handlers, function (item) {
-	                item.call(scope, o);
-	            });
-	        }
-	    }]);
-
-	    return Observer;
-	}();
-
-	exports.default = Observer;
 
 /***/ }
 /******/ ]);

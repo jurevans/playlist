@@ -1,6 +1,9 @@
-let http = require('http');
+/* Example Mongo URL */
+// const mongoURL = 'mongodb://playlist:playlist@localhost:27017/playlist';
 
+let http = require('http');
 let app = require('./app')();
+
 let port = process.env.PORT || 3000;
 let host = process.env.HOST || '0.0.0.0';
 
