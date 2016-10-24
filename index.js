@@ -1,4 +1,5 @@
 /* Components */
+import Observer from './src/js/observer.js';
 
 import ListComponent from './src/jsx/components/list.jsx';
 import CurrentComponent from './src/jsx/components/current.jsx'

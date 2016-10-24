@@ -16,11 +16,11 @@ class ControlsComponent extends React.Component {
     }
 
 	render() {
-		return <div className="controls">
-				<button name="play" onClick={this.handleClick}>Play/Pause</button>
-				<button name="stop" onClick={this.handleClick}>Stop</button>
-				<button name="next" onClick={this.handleClick}>Next</button>
-				<button name="prev" onClick={this.handleClick}>Previous</button>
+        return <div className="controls">
+                <button name="play" onClick={this.handleClick}>Play/Pause</button>
+                <button name="stop" onClick={this.handleClick}>Stop</button>
+                <button name="next" onClick={this.handleClick}>Next</button>
+                <button name="prev" onClick={this.handleClick}>Previous</button>
 			</div>
 	}
 };
