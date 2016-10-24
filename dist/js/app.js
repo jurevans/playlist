@@ -104,19 +104,25 @@
 	        key: 'render',
 	        value: function render() {
 	            var arrList = [];
+	            var data = {
+	                playlist: [{
+	                    _id: 'item1',
+	                    name: 'Item 1'
+	                }, {
+	                    _id: 'item2',
+	                    name: 'Item 2'
+	                }, {
+	                    _id: 'item3',
+	                    name: 'Item 3'
+	                }]
+	            };
 
-	            for (var i = 0; i < 4; i++) {
+	            _underscore2.default.each(data.playlist, function (item) {
 	                arrList.push(_react2.default.createElement(
 	                    'li',
-	                    { key: 'list_item_' + i },
-	                    'Item ',
-	                    i + 1
+	                    { key: item._id },
+	                    item.name
 	                ));
-	            }
-
-	            _underscore2.default.each(arrList, function (item) {
-	                // Just a test...
-	                console.log(item);
 	            });
 
 	            return _react2.default.createElement(

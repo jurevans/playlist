@@ -11,20 +11,31 @@ class ListComponent extends React.Component {
     }
 
 	render() {
-        let arrList = [];
+        let list = [];
+        let data = {
+            playlist: [
+                {
+                    _id: 'item1',
+                    name: 'Item 1'
+                },
+                {
+                    _id: 'item2',
+                    name: 'Item 2'
+                },
+                {
+                    _id: 'item3',
+                    name: 'Item 3'
+                }
+            ]
+        };
 
-        for(let i=0; i<4; i++) {
-            arrList.push(<li key={'list_item_' + i}>Item {i + 1}</li>);
-        }
-
-        _.each(arrList, (item) => {
-            // Just a test...
-            console.log(item);
+        _.each(data.playlist, (item) => {
+            list.push(<li key={item._id}>{item.name}</li>);
         });
 
 		return (
             <ul>
-                {arrList}
+                {list}
             </ul>
         );
 	}
