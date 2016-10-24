@@ -23148,13 +23148,6 @@
 
 	        var _this = _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).call(this, props));
 
-	        _this.state = {
-	            play: false,
-	            stop: false,
-	            next: false,
-	            prev: false
-	        };
-
 	        _this.handleClick = _this.handleClick.bind(_this);
 	        return _this;
 	    }

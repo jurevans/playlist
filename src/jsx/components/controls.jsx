@@ -6,13 +6,6 @@ class ControlsComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            play: false,
-            stop: false,
-            next: false,
-            prev: false
-        }
-
         this.handleClick = this.handleClick.bind(this);
     }
 
