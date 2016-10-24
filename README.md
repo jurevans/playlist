@@ -1,4 +1,4 @@
-# RadioStation App
+# Playlist App
 
 Song Data API for creating stations.
 
