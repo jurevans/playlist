@@ -10,7 +10,7 @@ class ListComponent extends React.Component {
         this.state = {};
     }
 
-	render() {
+    render() {
         let list = [];
         let data = {
             playlist: [
