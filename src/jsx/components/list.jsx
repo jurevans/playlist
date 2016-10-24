@@ -33,7 +33,7 @@ class ListComponent extends React.Component {
             list.push(<li key={item._id}>{item.name}</li>);
         });
 
-		return (
+        return (
             <ul>
                 {list}
             </ul>
