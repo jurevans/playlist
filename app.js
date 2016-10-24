@@ -1,7 +1,7 @@
-module.exports = function(){
-    var express = require('express');
-    var bodyParser = require('body-parser');
-    var app = express();
+module.exports = () => {
+    let express = require('express');
+    let bodyParser = require('body-parser');
+    let app = express();
 
     app.use( bodyParser.json() );
     app.use( bodyParser.urlencoded({ extended: true }) );
@@ -9,8 +9,8 @@ module.exports = function(){
     /* Static assets */
     app.use( express.static(__dirname + '/dist') );
 
-	app.get('/api', function(req, res) {
-        var data = {
+	app.get('/api', (req, res) => {
+        let data = {
             playlist: [
                 {
                     _id: 'item1',
@@ -28,10 +28,10 @@ module.exports = function(){
         };
 
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify( data ));
+        res.send( JSON.stringify( data ) );
 	});
 
-    app.use(function(req, res, next){
+    app.use( (req, res, next) => {
         res.set('X-Powered-By', '');
         next();
     });
