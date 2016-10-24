@@ -1,6 +1,6 @@
 # Playlist App
 
-Song Data API for creating stations.
+API and UI for creating playlists/internet radio/whatever using ES2015.
 
 Requires:
 
