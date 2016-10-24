@@ -10,3 +10,11 @@ Requires:
 * Webpack
 * Mocha/Chai
 
+# Development Server
+
+```node server```
+
+# Development UI (webpack-dev-server)
+
+```webpack-dev-server --progress --colors --hot --port 15001```
+
