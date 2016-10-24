@@ -23141,7 +23141,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'controls' },
 					_react2.default.createElement(
 						'button',
 						null,
