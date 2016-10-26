@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
-import Observer from '../../js/observer.js';
 
-class ControlsComponent extends React.Component {
+class ControlsComponent extends Component {
     constructor(props) {
         super(props);
         this.observer = new Observer();

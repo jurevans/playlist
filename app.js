@@ -3,7 +3,7 @@ module.exports = () => {
     const bodyParser = require('body-parser');
     const app = express();
     const mongoose = require('mongoose');
-    
+
     app.use( bodyParser.json() );
     app.use( bodyParser.urlencoded({ extended: true }) );
 
@@ -14,15 +14,15 @@ module.exports = () => {
         let data = {
             playlist: [
                 {
-                    _id: 'item1',
+                    _id: '1',
                     name: 'Item 1'
                 },
                 {
-                    _id: 'item2',
+                    _id: '2',
                     name: 'Item 2'
                 },
                 {
-                    _id: 'item3',
+                    _id: '3',
                     name: 'Item 3'
                 }
             ]
