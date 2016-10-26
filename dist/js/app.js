@@ -87,6 +87,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	/* Components */
+
 
 	var IndexComponent = function (_Component) {
 	    _inherits(IndexComponent, _Component);
@@ -105,9 +107,9 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'app' },
-	                _react2.default.createElement(_list2.default, null),
-	                _react2.default.createElement(_current2.default, null),
-	                _react2.default.createElement(_controls2.default, null)
+	                _react2.default.createElement(_list2.default, { ref: 'list' }),
+	                _react2.default.createElement(_current2.default, { ref: 'current' }),
+	                _react2.default.createElement(_controls2.default, { ref: 'controls' })
 	            );
 	        }
 	    }]);
@@ -21528,17 +21530,9 @@
 	        key: 'render',
 	        value: function render() {
 	            var list = [];
+	            /* TESTING */
 	            var data = {
-	                playlist: [{
-	                    _id: 'item1',
-	                    name: 'Item 1'
-	                }, {
-	                    _id: 'item2',
-	                    name: 'Item 2'
-	                }, {
-	                    _id: 'item3',
-	                    name: 'Item 3'
-	                }]
+	                playlist: [{ _id: 'item1', name: 'Item 1' }, { _id: 'item2', name: 'Item 2' }, { _id: 'item3', name: 'Item 3' }]
 	            };
 
 	            _underscore2.default.each(data.playlist, function (item) {

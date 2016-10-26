@@ -11,20 +11,12 @@ class ListComponent extends Component {
 
     render() {
         let list = [];
+        /* TESTING */
         let data = {
             playlist: [
-                {
-                    _id: 'item1',
-                    name: 'Item 1'
-                },
-                {
-                    _id: 'item2',
-                    name: 'Item 2'
-                },
-                {
-                    _id: 'item3',
-                    name: 'Item 3'
-                }
+                { _id: 'item1', name: 'Item 1' },
+                { _id: 'item2', name: 'Item 2' },
+                { _id: 'item3', name: 'Item 3' }
             ]
         };
 
