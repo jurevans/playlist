@@ -46,17 +46,9 @@
 
 	'use strict';
 
-	var _list = __webpack_require__(1);
+	var _index = __webpack_require__(1);
 
-	var _list2 = _interopRequireDefault(_list);
-
-	var _current = __webpack_require__(174);
-
-	var _current2 = _interopRequireDefault(_current);
-
-	var _controls = __webpack_require__(175);
-
-	var _controls2 = _interopRequireDefault(_controls);
+	var _index2 = _interopRequireDefault(_index);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -76,9 +68,17 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _underscore = __webpack_require__(173);
+	var _list = __webpack_require__(173);
 
-	var _underscore2 = _interopRequireDefault(_underscore);
+	var _list2 = _interopRequireDefault(_list);
+
+	var _current = __webpack_require__(175);
+
+	var _current2 = _interopRequireDefault(_current);
+
+	var _controls = __webpack_require__(176);
+
+	var _controls2 = _interopRequireDefault(_controls);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -88,55 +88,34 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ListComponent = function (_Component) {
-	    _inherits(ListComponent, _Component);
+	var IndexComponent = function (_Component) {
+	    _inherits(IndexComponent, _Component);
 
-	    function ListComponent(props) {
-	        _classCallCheck(this, ListComponent);
+	    function IndexComponent() {
+	        _classCallCheck(this, IndexComponent);
 
-	        var _this = _possibleConstructorReturn(this, (ListComponent.__proto__ || Object.getPrototypeOf(ListComponent)).call(this, props));
-
-	        _this.state = {};
-	        return _this;
+	        return _possibleConstructorReturn(this, (IndexComponent.__proto__ || Object.getPrototypeOf(IndexComponent)).apply(this, arguments));
 	    }
 
-	    _createClass(ListComponent, [{
+	    _createClass(IndexComponent, [{
 	        key: 'render',
 	        value: function render() {
-	            var list = [];
-	            var data = {
-	                playlist: [{
-	                    _id: 'item1',
-	                    name: 'Item 1'
-	                }, {
-	                    _id: 'item2',
-	                    name: 'Item 2'
-	                }, {
-	                    _id: 'item3',
-	                    name: 'Item 3'
-	                }]
-	            };
-
-	            _underscore2.default.each(data.playlist, function (item) {
-	                list.push(_react2.default.createElement(
-	                    'li',
-	                    { key: item._id },
-	                    item.name
-	                ));
-	            });
+	            console.log(_list2.default);
 
 	            return _react2.default.createElement(
-	                'ul',
-	                null,
-	                list
+	                'div',
+	                { className: 'app' },
+	                _react2.default.createElement(_list2.default, null),
+	                _react2.default.createElement(_current2.default, null),
+	                _react2.default.createElement(_controls2.default, null)
 	            );
 	        }
 	    }]);
 
-	    return ListComponent;
+	    return IndexComponent;
 	}(_react.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(ListComponent, null), document.getElementById('list'));
+	_reactDom2.default.render(_react2.default.createElement(IndexComponent, null), document.getElementById('app-container'));
 
 /***/ },
 /* 2 */
@@ -21509,6 +21488,84 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _underscore = __webpack_require__(174);
+
+	var _underscore2 = _interopRequireDefault(_underscore);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListComponent = function (_Component) {
+	    _inherits(ListComponent, _Component);
+
+	    function ListComponent(props) {
+	        _classCallCheck(this, ListComponent);
+
+	        var _this = _possibleConstructorReturn(this, (ListComponent.__proto__ || Object.getPrototypeOf(ListComponent)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(ListComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var list = [];
+	            var data = {
+	                playlist: [{
+	                    _id: 'item1',
+	                    name: 'Item 1'
+	                }, {
+	                    _id: 'item2',
+	                    name: 'Item 2'
+	                }, {
+	                    _id: 'item3',
+	                    name: 'Item 3'
+	                }]
+	            };
+
+	            _underscore2.default.each(data.playlist, function (item) {
+	                list.push(_react2.default.createElement(
+	                    'li',
+	                    { key: item._id },
+	                    item.name
+	                ));
+	            });
+
+	            return _react2.default.createElement(
+	                'ul',
+	                null,
+	                list
+	            );
+	        }
+	    }]);
+
+	    return ListComponent;
+	}(_react.Component);
+
+	exports.default = ListComponent;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
 	//     http://underscorejs.org
 	//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -23060,10 +23117,14 @@
 
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -23071,11 +23132,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(35);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _underscore = __webpack_require__(173);
+	var _underscore = __webpack_require__(174);
 
 	var _underscore2 = _interopRequireDefault(_underscore);
 
@@ -23110,13 +23167,17 @@
 		return CurrentComponent;
 	}(_react.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(CurrentComponent, null), document.getElementById('current'));
+	exports.default = CurrentComponent;
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -23124,11 +23185,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(35);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _underscore = __webpack_require__(173);
+	var _underscore = __webpack_require__(174);
 
 	var _underscore2 = _interopRequireDefault(_underscore);
 
@@ -23147,8 +23204,6 @@
 	        _classCallCheck(this, ControlsComponent);
 
 	        var _this = _possibleConstructorReturn(this, (ControlsComponent.__proto__ || Object.getPrototypeOf(ControlsComponent)).call(this, props));
-
-	        _this.observer = new Observer();
 
 	        _this.handleClick = _this.handleClick.bind(_this);
 	        return _this;
@@ -23200,7 +23255,7 @@
 
 	;
 
-	_reactDom2.default.render(_react2.default.createElement(ControlsComponent, null), document.getElementById('controls'));
+	exports.default = ControlsComponent;
 
 /***/ }
 /******/ ]);

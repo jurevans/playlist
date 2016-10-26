@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
 class CurrentComponent extends Component {
@@ -8,4 +7,4 @@ class CurrentComponent extends Component {
 	}
 }
 
-ReactDOM.render(<CurrentComponent/>, document.getElementById('current'));
+export default CurrentComponent;

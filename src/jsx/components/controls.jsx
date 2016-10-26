@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
 class ControlsComponent extends Component {
     constructor(props) {
         super(props);
-        this.observer = new Observer();
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -30,4 +28,4 @@ class ControlsComponent extends Component {
 	}
 };
 
-ReactDOM.render(<ControlsComponent/>, document.getElementById('controls'));
+export default ControlsComponent;

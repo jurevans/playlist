@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
 class ListComponent extends Component {
@@ -41,4 +40,4 @@ class ListComponent extends Component {
 	}
 }
 
-ReactDOM.render(<ListComponent/>, document.getElementById('list'));
+export default ListComponent;
