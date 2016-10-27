@@ -12,24 +12,24 @@ Requires:
 
 # Build
 
-```webpack```
+`webpack`
 
 # Development Server
 
-```node server```
+`node server`
 
 # Development UI (webpack-dev-server)
 
-```webpack-dev-server```
+`webpack-dev-server`
 
 Or:
 
-```webpack-dev-server --progress --colors --hot --port 15001```
+`webpack-dev-server --progress --colors --hot --port 15001`
 
 # Testing (Mocha/Chai)
 
-```npm test```
+`npm test`
 
 Or:
 
-```mocha --compilers js:babel-core/register```
+`mocha --compilers js:babel-core/register`

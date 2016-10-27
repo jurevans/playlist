@@ -9,11 +9,13 @@ class IndexComponent extends Component {
     render() {
         console.log(ListComponent);
 
-        return <div className="app">
-            <ListComponent ref="list"/>
-            <CurrentComponent ref="current"/>
-            <ControlsComponent ref="controls"/>
-        </div>
+        return (
+            <div className="app">
+                <ListComponent ref="list"/>
+                <CurrentComponent ref="current"/>
+                <ControlsComponent ref="controls"/>
+            </div>
+        );
     }
 }
 

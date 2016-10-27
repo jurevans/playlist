@@ -3,7 +3,9 @@ import _ from 'underscore';
 
 class CurrentComponent extends Component {
 	render() {
-		return <div>Current item</div>
+		return (
+            <div>Current item</div>
+        );
 	}
 }
 
