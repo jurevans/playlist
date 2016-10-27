@@ -7,8 +7,6 @@ import ControlsComponent from './components/controls.jsx';
 
 class IndexComponent extends Component {
     render() {
-        console.log(ListComponent);
-
         return (
             <div className="app">
                 <ListComponent ref="list"/>
